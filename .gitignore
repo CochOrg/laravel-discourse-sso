@@ -5,3 +5,4 @@ phpunit.xml
 .phpunit.result.cache
 composer.lock
 .idea
+.DS_Store
