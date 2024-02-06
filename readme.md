@@ -10,7 +10,7 @@ Added the ability to use multiple forums.
 Install Discourse SSO for Laravel:
 
 ```bash
-$ composer require coch/laravel-discourse-sso
+$ composer require cochorg/laravel-discourse-sso
 ```
 
 The package uses the [auto registration feature](https://laravel.com/docs/5.8/packages#package-discovery) of Laravel 5.
