@@ -1,0 +1,65 @@
+{
+    "name": "cochorg/laravel-discourse-sso",
+    "description": "Integrate Discourse SSO into Laravel.",
+    "keywords": [
+        "discourse",
+        "laravel",
+        "library",
+        "single sign on",
+        "spinen",
+        "sso",
+        "cochorg"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergei Denwer",
+            "email": "sergei.denwer@gmail.com"
+        },
+        {
+            "name": "Jimmy Puckett",
+            "email": "jimmy.puckett@spinen.com"
+        },
+        {
+            "name": "Stephen Finney",
+            "email": "stephen.finney@spinen.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "cviebrock/discourse-php": "^0.9.3",
+        "guzzlehttp/guzzle": "^7.4.5",
+        "illuminate/auth": "~8|~9|~10",
+        "illuminate/routing": "~8|~9|~10",
+        "illuminate/support": "~8|~9|~10"
+    },
+    "require-dev": {
+        "laravel/sail": "^1.21",
+        "mockery/mockery": "^1.5.1",
+        "phpunit/phpunit": "^9.6.5",
+        "psy/psysh": "^0.11.1",
+        "symfony/var-dumper": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CochOrg\\Discourse\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CochOrg\\Discourse\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CochOrg\\Discourse\\SsoServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

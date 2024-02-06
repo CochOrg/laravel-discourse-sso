@@ -1,0 +1,34 @@
+<?php
+
+namespace CochOrg\Discourse;
+
+use Illuminate\Contracts\Routing\Registrar as Router;
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * Class SsoServiceProvider
+ */
+class SsoServiceProvider extends ServiceProvider
+{
+    /**
+     * Perform post-registration booting of services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->app['router']->group(
+            ['middleware' => $this->app['config']->get('services.discourse.middleware', ['web', 'auth'])],
+            function (Router $router) {
+                $router->get(
+                    $this->app['config']->get('services.discourse.route'),
+                    [
+                        'as' => 'sso.login',
+                        'domain' => $this->app['config']->get('services.discourse.domain', null),
+                        'uses' => 'CochOrg\Discourse\Controllers\SsoController@login',
+                    ]
+                );
+            }
+        );
+    }
+}
